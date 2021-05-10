@@ -2,13 +2,13 @@ class CategoriesController < ApplicationController
 
     def index
         categories = Category.all
-        render json: categories
+        render json: categories, except:[:created_at, :updated_at]
 
     end
 
     def show
-        categorie = Category.find_by(id: params[:id])
-        render json: categorie
+        category = Category.find_by(id: params[:id])
+        render json: category, except:[:created_at, :updated_at]
     end
 
 end
