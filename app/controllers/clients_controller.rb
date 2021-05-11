@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-    skip_before_action :authenticate, only: [:create, :login]
+    skip_before_action :authenticate, only: [:create, :login, :index]
 
     def create
       client = Client.create(
@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
         
         # render json: user # implicitly run serializer
       else
-        render json: { error: "Invalid username or password" }, status: :unauthorized
+        render json: { error: "Invalid name or password" }, status: :unauthorized
       end
     end
   
@@ -56,14 +56,14 @@ class ClientsController < ApplicationController
         render json: client, except:[:created_at, :updated_at]
     end
 
-    def create
-        @user = Client.create(client_params)
-        if @user.valid?
-            render json: { user: UserSerializer.new(@user)}, status: :created
-        else
-            render json: { error: 'failed to create user'}, status: :bad_request
-    end
-end
+    # def create
+    #     @user = Client.create(client_params)
+    #     if @user.valid?
+    #         render json: { user: UserSerializer.new(@user)}, status: :created
+    #     else
+    #         render json: { error: 'failed to create user'}, status: :bad_request
+    # end
+# end
 
     private
     def user_params
