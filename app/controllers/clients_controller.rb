@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-    skip_before_action :authenticate, only: [:create, :login, :index]
+    skip_before_action :authenticate, only: [:create, :login]
 
     def create
       client = Client.create(
@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
         age: params[:age],
         email: params[:email],
       )
-  
+      
       if client.valid?
         token = encode_token({ client_id: client.id })
   
