@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
-
+    skip_before_action :authenticate, only: [:index, :show]
     def index
         attractions = Attraction.all
         render json: attractions

@@ -1,7 +1,9 @@
+
 Rails.application.routes.draw do
   resources :trips
   resources :attractions
   resources :categories
+  get "/history", to: "trips#client_trip_history"
 
   resources :clients, only: [:create]
   post "/login", to: "clients#login"
