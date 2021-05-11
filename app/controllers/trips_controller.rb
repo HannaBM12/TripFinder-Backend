@@ -11,4 +11,16 @@ class TripsController < ApplicationController
         render json: trip, except:[:created_at, :updated_at]
     end
 
+    def create
+
+    end
+
+
+    private
+    
+    def trip_params
+
+    end
+
+
 end
