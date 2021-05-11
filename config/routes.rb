@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :attractions
   resources :categories
 
-  resources :clients, only: [:create, :index]
+  resources :clients, only: [:create, :index, :show]
   post "/login", to: "clients#login"
   get "/autologin", to: "clients#autologin"
   patch "/profile", to: "clients#profile"

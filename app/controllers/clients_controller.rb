@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-    skip_before_action :authenticate, only: [:create, :login]
+    skip_before_action :authenticate, only: [:create, :login, :index, :show]
 
     def create
       client = Client.create(
@@ -51,6 +51,7 @@ class ClientsController < ApplicationController
         clients = Client.all
         render json: clients
     end
+    
     def show
         client = Client.find_by(id: params[:id])
         render json: client, except:[:created_at, :updated_at]
