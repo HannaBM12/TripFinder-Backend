@@ -40,6 +40,7 @@ class ClientsController < ApplicationController
   
     # before_action :authenticate
     def profile
+      # byebug
       # find that use in the database (happens in the authenticate before_action)
       @current_user.update(age: params[:age], name: params[:name], email: params[:email])
       render json: @current_user

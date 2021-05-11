@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
     skip_before_action :authenticate, only: [:index, :show]
+    
     def index
         trips = Trip.all
         render json: trips
