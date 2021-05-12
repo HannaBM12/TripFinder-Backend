@@ -1,5 +1,5 @@
 class TripSerializer < ActiveModel::Serializer
-  attributes :id, :attraction_name, :client_name, :date, :quantity, :total, :rating, :reviews
+  attributes :id, :attraction_name, :client_name, :date, :quantity, :total, :rating, :reviews, :image
 
 
   def attraction_name
@@ -8,6 +8,10 @@ class TripSerializer < ActiveModel::Serializer
 
   def client_name
     self.object.client.name
+  end
+
+  def image
+    self.object.attraction.image
   end
 
 end
