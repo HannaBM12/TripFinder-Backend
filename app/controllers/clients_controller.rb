@@ -24,7 +24,8 @@ class ClientsController < ApplicationController
     #   byebug
       if client && client.authenticate(params[:password])
         token = encode_token({ client_id: client.id })
-  
+        # encode_token might need to be issue_token
+        # cookies.signed[:jwt] = {value: token, httponly: true}
         render json: { client: ClientSerializer.new(client), token: token }
         
         # render json: user # implicitly run serializer
