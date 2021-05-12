@@ -1,10 +1,7 @@
 class TripsController < ApplicationController
     skip_before_action :authenticate, only: [:index, :show]
-<<<<<<< HEAD
     
-=======
 
->>>>>>> d2891e398769c6c24f073381fc44ff246bd13ff7
     def index
         trips = Trip.all
         render json: trips, except:[:created_at, :updated_at]
@@ -45,7 +42,7 @@ class TripsController < ApplicationController
 
     def destroy
         byebug
-        trip = trip.find(params[:id])
+        trip = Trip.find(params[:id])
         trip.destroy!
 
         render json: {}
