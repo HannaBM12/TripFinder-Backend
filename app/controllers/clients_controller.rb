@@ -40,9 +40,9 @@ class ClientsController < ApplicationController
   
     # before_action :authenticate
     def profile
+      # byebug
       # find that use in the database (happens in the authenticate before_action)
-      @current_user.update(age: params[:age], name: params[:name])
-  
+      @current_user.update(age: params[:age], name: params[:name], email: params[:email])
       render json: @current_user
     end
 
@@ -51,6 +51,7 @@ class ClientsController < ApplicationController
         clients = Client.all
         render json: clients
     end
+
     def show
         client = Client.find_by(id: params[:id])
         render json: client, except:[:created_at, :updated_at]

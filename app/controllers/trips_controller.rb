@@ -33,4 +33,5 @@ class TripsController < ApplicationController
         params.permit(:date, :quantity, :reviews, :rating, :total, :attraction_id, :client_id)
     end
 
+
 end
