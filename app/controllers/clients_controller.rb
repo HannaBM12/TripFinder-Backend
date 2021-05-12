@@ -51,6 +51,7 @@ class ClientsController < ApplicationController
         clients = Client.all
         render json: clients
     end
+    
     def show
         client = Client.find_by(id: params[:id])
         render json: client, except:[:created_at, :updated_at]
