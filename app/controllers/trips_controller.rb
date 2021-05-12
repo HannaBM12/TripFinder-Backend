@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
     skip_before_action :authenticate, only: [:index, :show]
+    
     def index
         trips = Trip.all
         render json: trips, except:[:created_at, :updated_at]
@@ -20,6 +21,8 @@ class TripsController < ApplicationController
 
 
     def create
+        trips = Trip.create!(trip_params)
+        render json: trips
 
     end
 
@@ -27,8 +30,7 @@ class TripsController < ApplicationController
     private
     
     def trip_params
-
+        params.permit(:date, :quantity, :reviews, :rating, :total, :attraction_id, :client_id)
     end
-
 
 end
