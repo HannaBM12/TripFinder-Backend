@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# googlesheetsproject@crack-fold-313521.iam.gserviceaccount.com
 
 Trip.destroy_all
 Client.destroy_all
@@ -15,7 +16,7 @@ Category.destroy_all
 puts "Destroying Seeds"
 
 client1 = Client.create(name:"Hanna Mulugeta", email: "Hannabmulugeta@gmail.com", age: '25', password: "password")
-client2 = Client.create(name:"Menachem Futerfas", email: "menachemfuterfas@gmail.com", age: '25', password: "password")
+client2 = Client.create(name:"Mena", email: "menachem@gmail.com", age: '25', password: "password")
 
 cat1 = Category.create(name: "Park", description: "Any type of parks")
 cat2 = Category.create(name: "Museum", description: "Museums")
