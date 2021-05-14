@@ -1,5 +1,5 @@
 class AttractionSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :image, :location, :price, :category
+  attributes :id, :name, :description, :image, :location, :price, :category, :video
 
 
   def category
