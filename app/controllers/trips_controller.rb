@@ -24,7 +24,6 @@ class TripsController < ApplicationController
    def create
         trips = Trip.create!(trip_params)
         render json: trips
-
     end
     
     def update
