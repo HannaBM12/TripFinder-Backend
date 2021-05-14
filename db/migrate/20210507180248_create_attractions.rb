@@ -6,6 +6,7 @@ class CreateAttractions < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :location
       t.float :price
+      t.string :video
       t.references :category, null: false, foreign_key: true
 
       t.timestamps
