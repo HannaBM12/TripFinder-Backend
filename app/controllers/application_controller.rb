@@ -14,7 +14,6 @@ class ApplicationController < ActionController::API
       # JWT.decode will throw an error if decoding doesn't succeed
       # so we need to handle the error so our app doesn't crash
       begin
-        #   byebug
         # decode token using JWT library
         payload = decode_token(get_auth_token)
         
